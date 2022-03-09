@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -115,7 +115,7 @@
           <div class="row">
             <div class="col-md-6 gx-5 mb-4">
               <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
+                <img src="C:/Users/mnb91/Downloads/1.jpg" class="img-fluid" />
                 <a href="#!">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
@@ -127,12 +127,10 @@
               <p class="text-muted">
                 미래의 국가 경제규모에 대한 예측은 중장기적 재정계획의 수립 및
                 평가를 위해 필수적일 뿐만 아니라, 미래의 소득수준에 대한 예측을
-                필요로 하는 연금개혁 및 세대갂 부의 재분배를 수반하는 사회복지정
-                책 등의 평가에도 중요한 역핛을 합니다. 하지만 예측하기 위해 필요
-                한 데이터는 너무 방대하고 또 집계하는 것이 오래 걸리기 때문에 예
-                측 경제규모 발표 주기(분기)가 길어져 적시성이 저하되는 문제가 발
-                생합니다. 이를 해결하기 위해 이 젂에 발표된 경제지표 관렦 데이터
-                를 변인으로 삼아 GDP 예측 모델을 개발하려 합니다.
+                필요로 하는 연금개혁 및 세대간 부의 재분배를 수반하는 사회복지정책 등의 수립에도 중요한 역할을 합니다.
+                하지만 예측하기 위해 필요한 데이터는 너무 다종, 방대하고 또 집계하는 것이 오래 걸리기 때문에 예측 경제규모
+                발표 주기(분기)가 길어져 적시성이 저하되는 문제가 발생합니다. 이를 해결하기 위해 이전에 수집된 경제지표 관련 데이터를
+                변인으로 삼아 GDP 예측 모델을 개발하였습니다.
               </p>
             </div>
           </div>
@@ -143,22 +141,30 @@
 
         <!--Section: Content-->
         <section class="text-center pr-20 pl-20">
-          <h4 class="mb-5"><strong>경제활동인구, 설비투자지수를 입력하여 주세요</strong></h4>
+          <h4 class="mb-5"><strong>경제활동인구(단위-천명), 설비투자지수를 입력하여 주세요</strong></h4>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="mainContent1">경제활동인구</span>
-            <input type="text" id="mainInputContent1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </div>
+          <form action="/elasticnet/gdp" method="post">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="mainContent1">경제활동인구</span>
+              <input type="text" name="economicalActivePopulation" id="economicalActivePopulation" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="mainContent2">설비투자지수</span>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-          </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="mainContent2">설비투자지수</span>
+              <input type="text" name="equipmentInvestment" id="equipmentInvestment" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
 
-          <div class="d-grid gap-2 col-6 mx-auto mb-lg-5">
-            <button class="btn btn-primary" type="button">예측하기</button>
-          </div>
+            <div class="d-grid gap-2 col-6 mx-auto mb-lg-5">
+              <button class="btn btn-primary" type="submit">예측하기</button>
+            </div>
+          </form>
         </section>
+        <!--Section: Content-->
+
+        <!--Section: Content-->
+        <section class="text-center pr-20 pl-20">
+          <h6 class="mb-2"><strong>예측결과(단위-10억원)</strong></h6>
+          <p th:text="${result}"></p>
         <!--Section: Content-->
       </div>
     </main>
@@ -212,7 +218,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"></script>
     <script>
       focusMethod = function getFocus() {
-        document.getElementById("mainInputContent1").focus();
+        document.getElementById("economicalActivePopulation").focus();
       }
     </script>
 </body>
