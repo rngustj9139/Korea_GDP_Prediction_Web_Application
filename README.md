@@ -52,3 +52,9 @@ LR은 불필요한 변수들을 제거하여 variance를 낮출 수 있다는 �
 ![git1](https://user-images.githubusercontent.com/43543906/157830744-d12569f5-0d9a-4b2b-97ad-5bc23856fb9c.png)
 ![git2](https://user-images.githubusercontent.com/43543906/157830751-0040e397-d159-4aee-a4ed-799da7295b57.png)
 ![git3](https://user-images.githubusercontent.com/43543906/157830758-e281d50a-e36a-4630-bb1e-a8d10ce20cca.png)
+
+
+---------------------------
+
+
+> 경희대학교 소프트웨어융합학과 구현서 [mnb9139@khu.ac.kr]
