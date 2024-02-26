@@ -15,7 +15,7 @@ java|
 springboot|
 python|
 flask|
-skitlearn|
+scikitlearn|
 MDbootstrap|
 
 ---------------------------
